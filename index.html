@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="./assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.3">
+    
+    
+      
+        <title>Hands-on with the ORCID API</title>
+      
+    
+    
+      <script src="./assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="./assets/stylesheets/application-acc56dad49.css">
+      
+        <link rel="stylesheet" href="./assets/stylesheets/application-8817cfa535.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="./css/theme_override.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="grey" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="." title="Hands-on with the ORCID API" class="md-logo md-header-nav__button">
+            <img src="./images/id-icon.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            1. Introduction
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="./images/id-icon.svg">
+      </i>
+    
+    Hands-on with the ORCID API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        1. Introduction
+      </label>
+    
+    <a href="." title="1. Introduction" class="md-nav__link md-nav__link--active">
+      1. Introduction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-orcid-apis" title="About the ORCID APIs" class="md-nav__link">
+    About the ORCID APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="sandbox/" title="2. Set up the Sandbox" class="md-nav__link">
+      2. Set up the Sandbox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="read/" title="3. READ public info" class="md-nav__link">
+      3. READ public info
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="search/" title="4. SEARCH public info" class="md-nav__link">
+      4. SEARCH public info
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="collect/" title="5. AUTHENTICATE iDs" class="md-nav__link">
+      5. AUTHENTICATE iDs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="connect/" title="6. ADD information" class="md-nav__link">
+      6. ADD information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="sync/" title="7. UPDATE information" class="md-nav__link">
+      7. UPDATE information
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="resources/" title="8. Resources" class="md-nav__link">
+      8. Resources
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-orcid-apis" title="About the ORCID APIs" class="md-nav__link">
+    About the ORCID APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>1. Introduction</h1>
+                
+                <h2 id="about-the-orcid-apis">About the ORCID APIs</h2>
+<p>ORCID's web interface gives researchers a way to interact with their record, but the real power of ORCID lies in the underlying data, which can be accessed by people and systems via Application Programming Interfaces (APIs).</p>
+<ul>
+<li><strong>Public API:</strong> Free to anyone with an ORCID iD</li>
+<li><strong>Basic Member API:</strong> Available to ORCID member organizations who subscribe at the Basic level (Sandbox Member API freely available for testing)</li>
+<li><strong>Premium Member API:</strong> Available to ORCID member organizations who subscribed at the Premium level (Sandbox Premium Member API freely available for testing)</li>
+</ul>
+<p><a href="https://orcid.org/about/membership">Learn more about membership levels</a><br><br></p>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>Public</th>
+<th>Basic Member</th>
+<th>Premium Member</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AUTHENTICATE</strong><br>Get a user's authenticated ORCID iDs</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td><strong>READ(PUBLIC)</strong><br>Read/search public data on ORCID records</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td><strong>READ (LIMITED)</strong><br>Read/search limited-access data on ORCID records</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td><strong>UPDATE</strong><br>Add items to a record or update items you added previously</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td><strong>WEBHOOKS</strong><br>Get notifications when ORCID records you're monitoring are updated</td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p>All of the ORCID APIs are  based on the same set of technologies:</p>
+<ul>
+<li><strong>REST:</strong> ORCID APIs are &ldquo;RESTful&rdquo;, which  means that they use HTTP to transfer information.</li>
+<li><strong>OAuth:</strong> ORCID  APIs use the <a href="https://oauth.net/2/">OAuth 2.0 authentication protocol</a> to grant client  applications access to users&rsquo; ORCID records.</li>
+<li><strong>XML/JSON:</strong> ORCID APIs support data exchange in either XML or JSON format.</li>
+</ul>
+<p><a href="https://members.orcid.org/api/about-orcid-apis">Learn more about the ORCID APIs</a></p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>To complete this tutorial, you'll need the following tools:</p>
+<ul>
+<li><strong>Web browser:</strong> Firefox (33+), Chrome (38+), Internet Explorer (10+), Safari (6+)</li>
+<li><strong>Internet connection</strong></li>
+<li><strong>Plain text editor:</strong> TextEdit (Mac), Notepad++ (Win), or your preferred plain text editor</li>
+<li><strong>Software capable of making HTTP requests:</strong><ul>
+<li><a href="http://curl.haxx.se/download.html">cURL</a>: Free, command-line application available for Mac  or Windows (pre-installed on most Mac OS versions; accessible within Terminal application)</li>
+<li>GUI tools, like <a href="https://www.getpostman.com/">Postman</a>, <a href="https://developers.google.com/oauthplayground/">Google OAuth Playground</a> or <a href="http://hurl.it&quot;&gt;hurl.it">hurl.it</a></li>
+</ul>
+</li>
+</ul>
+<p>Examples in this tutorial use <a href="https://www.getpostman.com/">Postman</a></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="sandbox/" title="2. Set up the Sandbox" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                2. Set up the Sandbox
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="./assets/javascripts/application-b30566c560.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
