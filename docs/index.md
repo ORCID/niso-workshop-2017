@@ -1,44 +1,20 @@
-##Why are we here?
-
-ORCID provides an identifier for researchers _AND_ tools (like APIs) to help make connections between researchers, their contributions, and affiliations. **Why?** To help people find information, and to simplify reporting and analysis.
-
-ORCID wants to help make it possible to do things like:
-
-* Find all of a researcher’s work with a single query
-* Auto-populate manuscript submission and grant application forms
-* Get (nearly) real-time data about researchers’ publications and grants
-* Find the current affiliation(s) of any researcher
-
-ORCID can't do this on its own - integrations with other systems (like manuscript submission/production, funding application, repository, research information, and directory systems) are essential. 
-
-This workshop provides an introduction to integrating ORCID into your systems, so that, together, we can help everyone involved in research spend more time *making* contributions and less time *managing* them!
-
-##Collect & Connect
-A top-notch ORCID integration includes the following capabilities:
-
-<img src="images/Collect_4PP.png" class="icon" width="28" alt="ORCID Collect icon"/> **Collect** authenticated ORCID iDs
-
-<img src="images/Connect_4PP.png" class="icon" width="28" alt="ORCID Connect icon"/> **Connect** Get data from ORCID/add data to ORCID
-
-<img src="images/Synchronize_4PP.png" class="icon" width="28" alt="ORCID Synchronize icon"/> **Synchronize** Get data from ORCID/add data to ORCID on an ongoing basis 
-
-<img src="images/Display_4PP.png" class="icon" width="28" alt="ORCID Display icon"/> **Display** iDs you’ve collected in your own system
-
-[Learn more about these integration steps](https://members.orcid.org/)
-
-
 ##About the ORCID APIs
 ORCID's web interface gives researchers a way to interact with their record, but the real power of ORCID lies in the underlying data, which can be accessed by people and systems via Application Programming Interfaces (APIs).
 
 * **Public API:** Free to anyone with an ORCID iD
-* **Member API:** Available to ORCID member organizations (Sandbox Member API freely available for testing)
+* **Basic Member API:** Available to ORCID member organizations who subscribe at the Basic level (Sandbox Member API freely available for testing)
+* **Premium Member API:** Available to ORCID member organizations who subscribed at the Premium level (Sandbox Premium Member API freely available for testing)
 
-| Features       | Public API | Member API |
-| -------------- | ---------- | ---------- |
-|**COLLECT**<br>Get authenticated ORCID iDs| <img src="images/Collect_4PP.png" class="icon" width="28" alt="ORCID Collect icon"/> | <img src="images/Collect_4PP.png" class="icon" width="28" alt="ORCID Collect icon"/> |
-|**CONNECT**<br>Get data from ORCID/add data to ORCID| *Get public data only<br>(can't add data)* | <img src="images/Connect_4PP.png" class="icon" width="28" alt="ORCID Connect icon"/> |
-|**SYNCHRONIZE**<br>Get data from ORCID/add data to ORCID on an ongoing basis| *Get public data only<br>(can't add data)* | <img src="images/Synchronize_4PP.png" class="icon" width="28" alt="ORCID Synchronize icon"/> |
-|**DISPLAY**<br>Show iDs you’ve collected in your own system| <img src="images/Display_4PP.png" class="icon" width="28" alt="ORCID Display icon"/> | <img src="images/Display_4PP.png" class="icon" width="28" alt="ORCID Display icon"/> |
+[Learn more about membership levels](https://orcid.org/about/membership)<br><br>
+
+
+| Features       | Public | Basic Member | Premium Member |
+| -------------- | ---------- | ---------------- | ------------------ |
+|**AUTHENTICATE**<br>Get a user's authenticated ORCID iDs| X | X | X |
+|**READ(PUBLIC)**<br>Read/search public data on ORCID records| X | X | X |
+|**READ (LIMITED)**<br>Read/search limited-access data on ORCID records|  | X | X |
+|**UPDATE**<br>Add items to a record or update items you added previously|  | X | X |
+|**WEBHOOKS**<br>Get notifications when ORCID records you're monitoring are updated|  |  | X |
 
 All of the ORCID APIs are  based on the same set of technologies:
 
@@ -56,6 +32,6 @@ To complete this tutorial, you'll need the following tools:
 * **Plain text editor:** TextEdit (Mac), Notepad++ (Win), or your preferred plain text editor
 * **Software capable of making HTTP requests:**
     - [cURL](http://curl.haxx.se/download.html): Free, command-line application available for Mac  or Windows (pre-installed on most Mac OS versions; accessible within Terminal application)
-    - Online tools, like [Google OAuth Playground](https://developers.google.com/oauthplayground/) or [hurl.it](http://hurl.it">hurl.it)
+    - GUI tools, like [Postman](https://www.getpostman.com/), [Google OAuth Playground](https://developers.google.com/oauthplayground/) or [hurl.it](http://hurl.it">hurl.it)
 
-Examples in this doc use [Google OAuth Playground](https://developers.google.com/oauthplayground/)
+Examples in this tutorial use [Postman](https://www.getpostman.com/)
