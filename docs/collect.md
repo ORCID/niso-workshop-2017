@@ -1,24 +1,16 @@
 In our first few API requests, we already knew which ORCID iD to use (our own!) and we read/searched public information, which didn't require any permission from the user. 
 
-In practice, you'll need to gather up iDs for researchers whose ORCID records you want to read, update, or associate with records in your own system AND get permission to take certain actions, like adding information to their ORCID records. 
+In practice, you'll need to gather up iDs for researchers whose ORCID records your interested in. The best way to do this is to get authenticated iDs from those researchers.
 
-In this section, we'll use the Member API to get an authenticated ORCID iD and record access permission.
+In this section, we'll use the Sandbox Member API to get an authenticated ORCID iD. This process can also be completed using the Public API.
 
 **Authenticated iDs**
 
 ORCID is about disambiguation,it's important that you get the correct iD for each researcher. The best way to do this is to collect **Authenticated ORCID iDs**, which means that each researcher signs into their ORCID account and authorizes your system to obtain their iD. [Learn more about Authenticated iDs](https://orcid.org/blog/2017/02/20/whats-so-special-about-signing)
 
-**Record access permission**
-
-Control over access to data in your ORCID record is one of [ORCID's core princples](https://orcid.org/about/what-is-orcid/principles). While you can read public ORCID data without the record owner's involvement, some API actions require permission:
-
-* Get an Authenticated ORCID iD
-* Read non-public data (items with privacy set to 'Trusted parties')
-* Add/update record data
-
 **OAuth 2.0** 
 
-Getting an Authenticated iD and record access permission from a user involves following [OAuth 2.0](https://oauth.net/2/), an industry-standard protocol for authorization. OAuth allows a user to give a website or application access to account information stored on another site, without giving that site their password. 
+Getting an Authenticated iD from a user involves following [OAuth 2.0](https://oauth.net/2/), an industry-standard protocol for authorization. OAuth allows a user to give a website or application access to account information stored on another site, without giving that site their password. 
 
 If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used OAuth!
 
@@ -41,7 +33,7 @@ client_secret: 7c8d6b1b-401b-4f5d-9b8b-b8108c6e197c
 ```
 (Demo client secret created for this workshop - do not share API client secrets!)
 
-###Get an access token & authenticated ORCID iD
+###Get an authenticated ORCID iD
 
 For this tutorial, we'll use Postman to simulate the steps of an OAuth 2.0 interaction that, in the real world, would be completed by your own custom web application or a vendor system.
 
@@ -55,19 +47,20 @@ For more details on what's happening behind the scenes, see our [Basic tutorial:
 
 | Field | Value |
 | ------| ------|
-|**Token Name**| ORCID Sandbox |
+|**Token Name**| Get ORCID iD |
 |**Auth URL**| ```https://sandbox.orcid.org/oauth/authorize``` |
 |**Access Token URL**| ```https://sandbox.orcid.org/oauth/token``` |
 |**Client ID**| ```APP-XA6KUTFCVQL0622C```<br>(Demo client ID created for this workshop) |
 |**Client Secret**| ```7c8d6b1b-401b-4f5d-9b8b-b8108c6e197c```<br>(Demo client secret created for this workshop - do not share API client secrets!) |
-|**Scope**| ```/activities/update``` <br>This scope allows adding/updating items in the education, employment, funding or works sections of an ORCID record. Other scopes are also available - see full list of [ORCID Scopes](https://members.orcid.org/api/oauth/orcid-scopes)|
+|**Scope**| ```/authenticate``` <br>This scope allows getting a user's authenticated ORCID iD. Other scopes are also available - see full list of [ORCID Scopes](https://members.orcid.org/api/oauth/orcid-scopes)|
 |**Grant Type**| Authorization Code|
 
 3. Leave **Request access token locally** unchecked and click **Request Token**<br>
-<img src="../images/04-2_token-config.png" width="400" alt="Google OAuth Playground exchanging authorization code for access token" />
+<img src="../images/04-2_token-config.png" width="400" alt="Postman config for exchanging authorization code for access token" />
 2. An ORCID sign-in screen will appear; sign into the Sandbox ORCID account you created earlier.<br>
 <img src="../images/04-2_signin-screen.png" width="400" alt="ORCID Sandbox signin screen" />
-3. A screen asking you to grant access to your record will appear; click **Authorize**<br>
+3. A screen asking you to authorize ORCID to share your iD with an external application will appear; click **Authorize**<br>
 <img src="../images/04-2_oauth-screen.png" width="400" alt="ORCID Sandbox authorization screen" />
-4. Beneath **Existing Tokens**, click **ORCID Sandbox**. The access token and ORCID iD for the user who signed in will appear at right.<br>
-<img src="../images/04-3_token-response.png" width="600" alt="Google OAuth Playground json response for an access token request" />
+4. Beneath **Existing Tokens**, click **Get ORCID iD**. The ORCID iD for the user who signed in will appear at right.<br>
+<img src="../images/04-3_token-response.png" width="600" alt="Postman response for an access token request" /><br>
+*An Access Token is also generated, however, this token is not valid for any additional API requests.*

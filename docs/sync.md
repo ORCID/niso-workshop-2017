@@ -1,4 +1,6 @@
-In a real-world situation, you may need to update a researcher's affiliation. In this section, we'll update our education affiliation to include an end date.
+In a real-world situation, you may need to update information that you've added previously, like the dates of a researcher's affiliation with your institution. 
+
+In this section, we'll use the Sandbox Member API to update our education affiliation to include an end date.
 
 ##Update an education affiliation
 
@@ -9,10 +11,11 @@ In a real-world situation, you may need to update a researcher's affiliation. In
 ```https://api.sandbox.orcid.org/v2.0/[ORCID ID]/education/[PUT CODE]```<br>
 *Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX and [PUT CODE] with the put-code for your education affiliation*<br>
 <img src="../images/06-2_request-uri.png" width="600" alt="Postman request URI configuration for updating an education affiliation" />
-4. Click **Authorization** and make sure that your ORCID Sandbox token is still selected, and the **Add token to** dropdown is still set to **Header**<br>
+4. Click **Authorization** and make sure that your **Update record** token is still selected, and the **Add token to** dropdown is still set to **Header**<br>
+<img src="../images/06-1_authorization.png" width="600" alt="Postman authorization config for education affiliation POST request" />
 5. Click **Headers** and make sure that ```accept``` and ```Content-type``` are both set to ```application/vnd.orcid+xml```<br>
 <img src="../images/06-2_put-headers.png" width="600" alt="Postman header configuration" />
-6. Click **Body** (the XML for the affiliation you added in the previous step should appear).
+6. Click **Body**; the XML for the affiliation you added in the previous step should appear.
 7. Inside the ```<education:education``` tag, add ```put-code="[PUT CODE]"```<br>
 *Replace [PUT CODE] with the put-code for your education affiliation, ex ```<education:education put-code="26971"```*<br>
 <img src="../images/06-2_request-body-1.png" width="600" alt="Postman request body configuration for updating an education affiliation showing where to place put-code" />

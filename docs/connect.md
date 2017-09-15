@@ -1,15 +1,36 @@
-Now that we've got an Access Token, we can use it like a password to take the API actions we requested permission for (in this case, to update Activities). In this section, we'll add an education affiliation to our Sandbox record.
+
+
+ORCID member organizations can use the API to add information from their systems, like affiliations, grants and publications, to user's records, making that information visible both to the user and to other systems that rely on ORCID data.
+
+In this section, we'll use the Member API to add an education affiliation item to our Sandbox record. 
+
+##Get an access token
+
+Before we can add data to an ORCID record, we first need to get permission from the record owner via the same OAuth 2.0 process we used to get an authenticated iD in the previous section. 
+
+***Why do we need permission?** Control over access to data in your ORCID record is one of [ORCID's core princples](https://orcid.org/about/what-is-orcid/principles). While you can read public data without the record owner's involvement, reading non-public data or making changes to data always requires the record owner's permission.* 
+
+1. In the same Postman request tab that you used in the last section, click **Get New Access Token**
+2. Change **Token Name** to **Update record** and **Scope** to ```/activites/update```. Leave all other fields as they were in the [Get an authenticated ORCID iD section](/collect/#get-an-authenticated-orcid-id)<br>
+*```/activites/update``` scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.*<br> 
+<img src="../images/06-1_token-config.png" width="400" alt="Postman config for exchanging authorization code for access token" />
+3. Leave **Request access token locally** unchecked and click **Request Token**
+2. An ORCID sign-in screen will appear; sign into the Sandbox ORCID account you created earlier. ***Note:** If you're already signed into ORCID in the same browser, this step will be skipped.*<br>
+<img src="../images/04-2_signin-screen.png" width="400" alt="ORCID Sandbox signin screen" />
+3. A screen asking you to grant permission to update your ORCID record will appear; click **Authorize**<br>
+<img src="../images/06-1_oauth-screen.png" width="400" alt="ORCID Sandbox authorization screen" />
+4. Beneath **Existing Tokens**, click **Update record**. The Access Token for the user who signed in will appear at right.<br>
+<img src="../images/06-1_token-response.png" width="600" alt="Postman response for an access token request" /><br>
 
 ##Add an education affiliation
-Still have that ORCID Sandbox access token saved in Postman? If so, continue with step 1 below. If not, go back and repeat the [Get an access token & authenticated ORCID iD](/collect/#get-an-access-token-authenticated-orcid-id) step from the previous section before moving on to the steps below.
+Next, we'll use the access token generated in the previous section to add an education affiliation to our Sandbox ORCID record.
 
-1. In the Postman Builder tab, click the **+** sign at the top of the screen to create a new request.
-2. Set the request type to **POST**.<br>
+1. In the same Postman Builder tab, you were working in to generate the **Update record** access token, set the request type to **POST**.<br>
 3. In the **Request URI** field enter:<br>
 ```https://api.sandbox.orcid.org/v2.0/[ORCID ID]/education```<br>
 *Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX*<br>
 <img src="../images/06-1_request-uri.png" width="600" alt="Postman request URI config for education affiliation POST request" />
-4. Click **Authorization**, select the **ORCID Sandbox** token, and set the **Add token to** dropdown to **Header**<br>
+4. Click **Authorization**, select the **Update record** token, and set the **Add token to** dropdown to **Header**<br>
 <img src="../images/06-1_authorization.png" width="600" alt="Postman authorization config for education affiliation POST request" />
 5. Click **Headers** and add the keys and values below (notice that Postman added the access token as a header)
 
