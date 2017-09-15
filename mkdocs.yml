@@ -13,7 +13,7 @@ pages:
     - 2. Set up the Sandbox: sandbox.md
     - 3. READ public info: read.md
     - 4. SEARCH public info: search.md
-    - 5. AUTHENTICATE iDs: collect.md
-    - 6. ADD information: connect.md
-    - 7. UPDATE information: sync.md
+    - 5. AUTHENTICATE iDs: authenticate.md
+    - 6. ADD information: add.md
+    - 7. UPDATE information: update.md
     - 8. Resources: resources.md

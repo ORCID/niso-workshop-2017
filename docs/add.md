@@ -11,7 +11,7 @@ Before we can add data to an ORCID record, we first need to get permission from 
 ***Why do we need permission?** Control over access to data in your ORCID record is one of [ORCID's core princples](https://orcid.org/about/what-is-orcid/principles). While you can read public data without the record owner's involvement, reading non-public data or making changes to data always requires the record owner's permission.* 
 
 1. In the same Postman request tab that you used in the last section, click **Get New Access Token**
-2. Change **Token Name** to **Update record** and **Scope** to ```/activites/update```. Leave all other fields as they were in the [Get an authenticated ORCID iD section](/collect/#get-an-authenticated-orcid-id)<br>
+2. Change **Token Name** to **Update record** and **Scope** to ```/activites/update```. Leave all other fields as they were in the [Get an authenticated ORCID iD section](/authenticate/#get-an-authenticated-orcid-id)<br>
 *```/activites/update``` scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.*<br> 
 <img src="../images/06-1_token-config.png" width="400" alt="Postman config for exchanging authorization code for access token" />
 3. Leave **Request access token locally** unchecked and click **Request Token**
