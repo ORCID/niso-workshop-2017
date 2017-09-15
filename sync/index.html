@@ -318,7 +318,8 @@
                 
                   <h1>7. UPDATE information</h1>
                 
-                <p>In a real-world situation, you may need to update a researcher's affiliation. In this section, we'll update our education affiliation to include an end date.</p>
+                <p>In a real-world situation, you may need to update information that you've added previously, like the dates of a researcher's affiliation with your institution. </p>
+<p>In this section, we'll use the Sandbox Member API to update our education affiliation to include an end date.</p>
 <h2 id="update-an-education-affiliation">Update an education affiliation</h2>
 <ol>
 <li>In the <strong>Response</strong> section from the POST request we just made, click <strong>Headers</strong> and scroll down to <strong>Location</strong>. Copy the 5-character code at the end of the URI - this is the <strong>put-code</strong> for the education affiliation that you added in the previous section.<br>
@@ -328,10 +329,11 @@
 <code>https://api.sandbox.orcid.org/v2.0/[ORCID ID]/education/[PUT CODE]</code><br>
 <em>Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX and [PUT CODE] with the put-code for your education affiliation</em><br>
 <img src="../images/06-2_request-uri.png" width="600" alt="Postman request URI configuration for updating an education affiliation" /></li>
-<li>Click <strong>Authorization</strong> and make sure that your ORCID Sandbox token is still selected, and the <strong>Add token to</strong> dropdown is still set to <strong>Header</strong><br></li>
+<li>Click <strong>Authorization</strong> and make sure that your <strong>Update record</strong> token is still selected, and the <strong>Add token to</strong> dropdown is still set to <strong>Header</strong><br>
+<img src="../images/06-1_authorization.png" width="600" alt="Postman authorization config for education affiliation POST request" /></li>
 <li>Click <strong>Headers</strong> and make sure that <code>accept</code> and <code>Content-type</code> are both set to <code>application/vnd.orcid+xml</code><br>
 <img src="../images/06-2_put-headers.png" width="600" alt="Postman header configuration" /></li>
-<li>Click <strong>Body</strong> (the XML for the affiliation you added in the previous step should appear).</li>
+<li>Click <strong>Body</strong>; the XML for the affiliation you added in the previous step should appear.</li>
 <li>Inside the <code>&lt;education:education</code> tag, add <code>put-code="[PUT CODE]"</code><br>
 <em>Replace [PUT CODE] with the put-code for your education affiliation, ex <code>&lt;education:education put-code="26971"</code></em><br>
 <img src="../images/06-2_request-body-1.png" width="600" alt="Postman request body configuration for updating an education affiliation showing where to place put-code" /></li>
