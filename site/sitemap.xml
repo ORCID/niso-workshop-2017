@@ -35,7 +35,7 @@
 
     
     <url>
-     <loc>/collect/</loc>
+     <loc>/authenticate/</loc>
      <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -43,7 +43,7 @@
 
     
     <url>
-     <loc>/connect/</loc>
+     <loc>/add/</loc>
      <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -51,7 +51,7 @@
 
     
     <url>
-     <loc>/sync/</loc>
+     <loc>/update/</loc>
      <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
