@@ -152,6 +152,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../access/" title="2. Accessing ORCID APIs" class="md-nav__link">
+      2. Accessing ORCID APIs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../sandbox/" title="2. Set up the Sandbox" class="md-nav__link">
       2. Set up the Sandbox
     </a>
@@ -185,6 +197,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-access-token" title="Get an access token" class="md-nav__link">
+    Get an access token
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#read-a-record-summary" title="Read a record summary" class="md-nav__link">
@@ -288,6 +307,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#get-an-access-token" title="Get an access token" class="md-nav__link">
+    Get an access token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#read-a-record-summary" title="Read a record summary" class="md-nav__link">
     Read a record summary
   </a>
@@ -318,14 +344,67 @@
                 
                   <h1>3. READ public info</h1>
                 
-                <p>In this section, we'll use the Public API to take a look at the underlying data for our Sandbox record. </p>
+                <p>In this section, we'll use the Public API to take a look at the underlying data for our Sandbox record. For more details on this process, see our <a href="http://members.orcid.org/api/tutorial/read-orcid-records">Basic tutorial: Read data on an ORCID record </a></p>
+<h2 id="get-an-access-token">Get an access token</h2>
+<p>Reading and searching public data on ORCID records requires an <a href="https://oauth.net/2/">OAuth 2.0</a> access token obtained using a <strong>client credentials</strong> grant type.</p>
+<p>This type of token can be re-used many times to read or search any ORCID records.</p>
+<ol>
+<li>In the Postman Builder tab, click <strong>Authorization</strong>, then set the <strong>Type</strong> dropdown to <strong>OAuth 2.0</strong><br> 
+<img src="../images/04-2_auth-type.png" width="600" alt="Postman authorization type config" /></li>
+<li>Click <strong>Get New Access Token</strong></li>
+<li>Enter the following settings:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Token Name</strong></td>
+<td>Read public</td>
+</tr>
+<tr>
+<td><strong>Auth URL</strong></td>
+<td>Leave blank</td>
+</tr>
+<tr>
+<td><strong>Access Token URL</strong></td>
+<td><code>https://sandbox.orcid.org/oauth/token</code></td>
+</tr>
+<tr>
+<td><strong>Client ID</strong></td>
+<td><code>APP-XA6KUTFCVQL0622C</code><br>(Demo client ID created for this workshop)</td>
+</tr>
+<tr>
+<td><strong>Client Secret</strong></td>
+<td><code>7c8d6b1b-401b-4f5d-9b8b-b8108c6e197c</code><br>(Demo client secret created for this workshop - do not share API client secrets!)</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td><code>/read-public</code> <br>This scope allows reading or searching public data on any ORCID records <a href="https://members.orcid.org/api/oauth/orcid-scopes">ORCID Scopes</a></td>
+</tr>
+<tr>
+<td><strong>Grant Type</strong></td>
+<td>Client Credentials</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Leave <strong>Request access token locally</strong> unchecked and click <strong>Request Token</strong><br>
+<img src="../images/read-public-token-config.png" width="400" alt="Postman config for client credentials token" /></li>
+<li>Beneath <strong>Existing Tokens</strong>, click <strong>Read public</strong>. The access token will appear at right. Notice that the token expires in 
+631138518 sec (20 years), which means that this token can be reused for some time. <br>
+<img src="../images/read-public-token-response.png" width="600" alt="Postman response for an access token request" /><br></li>
+</ol>
 <h2 id="read-a-record-summary">Read a record summary</h2>
 <ol>
-<li>Open Postman and click the <strong>Builder</strong> tab at the top of the screen</li>
 <li>Set the request type to <strong>GET</strong></li>
 <li>In the <strong>Enter request URL</strong> field enter:<br>
-<code>https://pub.sandbox.orcid.org/v2.0/[ORCID ID]/record</code><br>
-<em>Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX</em><br>
+<code>https://pub.sandbox.orcid.org/v2.0/0000-0002-4456-8947/record</code><br>
+<em>Replace the ORCID iD above with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX</em><br>
 <img src="../images/02-1_request-record.png" width="600" alt="Postman request for ORCID record summary" /></li>
 <li>Click <strong>Send</strong></li>
 <li>A summary version of your record in XML format will appear in the <strong>Body</strong> section of the response<br>
@@ -337,8 +416,8 @@
 <li>In the record summary XML, find the <strong>activities-summary</strong> section, then find the <strong>put-code</strong> for the employment item that you added in the previous section.<br>
 <img src="../images/02-2_put-code.png" width="600" alt="XML showing put-code for an employment item on an ORCID record" /></li>
 <li>In the <strong>Request URL</strong> field enter:<br>
-<code>https://pub.sandbox.orcid.org/v2.0/[ORCID ID]/employment/[PUT CODE]</code><br>
-<em>Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX and [PUT CODE] with the put-code for your employment item</em><br>
+<code>https://pub.sandbox.orcid.org/v2.0/0000-0002-4456-8947/employment/26970</code><br>
+<em>Replace [ORCID ID] with the iD for your Sandbox record, format XXXX-XXXX-XXXX-XXXX and the put-code with the put-code for your employment item</em><br>
 <img src="../images/02-2_request-employment.png" width="600" alt="Postman request for an employment item on an ORCID record" /></li>
 <li>Click <strong>Send</strong></li>
 <li>Fulls details of your employment entry will appear in the <strong>Body</strong> of the response section<br>

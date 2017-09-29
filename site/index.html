@@ -163,6 +163,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-orcid" title="About ORCID" class="md-nav__link">
+    About ORCID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#about-the-orcid-apis" title="About the ORCID APIs" class="md-nav__link">
     About the ORCID APIs
   </a>
@@ -182,6 +189,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="access/" title="2. Accessing ORCID APIs" class="md-nav__link">
+      2. Accessing ORCID APIs
+    </a>
   </li>
 
     
@@ -288,6 +307,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-orcid" title="About ORCID" class="md-nav__link">
+    About ORCID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#about-the-orcid-apis" title="About the ORCID APIs" class="md-nav__link">
     About the ORCID APIs
   </a>
@@ -318,7 +344,29 @@
                 
                   <h1>1. Introduction</h1>
                 
-                <h2 id="about-the-orcid-apis">About the ORCID APIs</h2>
+                <h2 id="about-orcid">About ORCID</h2>
+<p><strong>Who we are:</strong></p>
+<ul>
+<li>Non-profit </li>
+<li>Open source project</li>
+<li>Committed international community</li>
+</ul>
+<p><strong>Our goal:</strong></p>
+<p>All who participate in research, scholarship, and innovation are <strong>uniquely identified</strong> and <strong>connected to their contributions</strong> across disciplines, borders, and time.</p>
+<p><strong>Why?</strong></p>
+<ul>
+<li>Help people find information (like all of a researcher's publications)</li>
+<li>Simplify reporting and analysis (by providing a central source for info about researcher's affilations and activites)</li>
+<li>Reduce time spent filling out forms (by providing a source for autopopulating form fields)</li>
+</ul>
+<p><strong>What we provide:</strong></p>
+<ul>
+<li><strong>Persistent digital identifier</strong> for researchers (ORCID iD)</li>
+<li><strong>Registry</strong> of those identifiers + their connections to affiliations and research activities</li>
+<li><strong>APIs</strong> for creating/retrieving metadata about connections between people, affiliations and research activities</li>
+</ul>
+<p>ORCID doesn't do this on its own - integrations with other systems (like manuscript submission/production, funding application, repository, research information, and directory systems) are essential.</p>
+<h2 id="about-the-orcid-apis">About the ORCID APIs</h2>
 <p>ORCID's web interface gives researchers a way to interact with their record, but the real power of ORCID lies in the underlying data, which can be accessed by people and systems via Application Programming Interfaces (APIs).</p>
 <ul>
 <li><strong>Public API:</strong> Free to anyone with an ORCID iD</li>
@@ -337,34 +385,34 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>AUTHENTICATE</strong><br>Get a user's authenticated ORCID iDs</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
+<td><strong>READ</strong><br>Read data ORCID records</td>
+<td><strong>X</strong><br><em>Public data</em></td>
+<td><strong>X</strong><br><em>Public + limited-access data (with user permission)</em></td>
+<td><strong>X</strong><br><em>Public + limited-access data (with user permission)</em></td>
 </tr>
 <tr>
-<td><strong>READ(PUBLIC)</strong><br>Read/search public data on ORCID records</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
+<td><strong>SEARCH</strong><br>Search data on ORCID records</td>
+<td><strong>X</strong><br><em>Public data</em></td>
+<td><strong>X</strong><br><em>Public + limited-access data (with user permission)</em></td>
+<td><strong>X</strong><br><em>Public + limited-access data (with user permission)</em></td>
 </tr>
 <tr>
-<td><strong>READ (LIMITED)</strong><br>Read/search limited-access data on ORCID records</td>
-<td></td>
-<td>X</td>
-<td>X</td>
+<td><strong>AUTHENTICATE</strong><br>Get a user's authenticated ORCID iD</td>
+<td><strong>X</strong></td>
+<td><strong>X</strong></td>
+<td><strong>X</strong></td>
 </tr>
 <tr>
 <td><strong>UPDATE</strong><br>Add items to a record or update items you added previously</td>
 <td></td>
-<td>X</td>
-<td>X</td>
+<td><strong>X</strong></td>
+<td><strong>X</strong></td>
 </tr>
 <tr>
 <td><strong>WEBHOOKS</strong><br>Get notifications when ORCID records you're monitoring are updated</td>
 <td></td>
 <td></td>
-<td>X</td>
+<td><strong>X</strong></td>
 </tr>
 </tbody>
 </table>
@@ -407,13 +455,13 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="sandbox/" title="2. Set up the Sandbox" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="access/" title="2. Accessing ORCID APIs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                2. Set up the Sandbox
+                2. Accessing ORCID APIs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

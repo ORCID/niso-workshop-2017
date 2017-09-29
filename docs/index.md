@@ -10,18 +10,17 @@
 
 All who participate in research, scholarship, and innovation are **uniquely identified** and **connected to their contributions** across disciplines, borders, and time.
 
-**Why?**
-
-- Help people find information (like all of a researcher's publications)
-- Simplify reporting and analysis (by providing a central source for info about researcher's affilations and activites)
-- Reduce time spent filling out forms (by providing a source for autopopulating form fields)
-
 **What we provide:**
 
-- **Persistent digital identifier** for researchers (ORCID iD)
+- **Persistent digital identifier** for researchers (ORCID iD), ex: [https://orcid.org/0000-0001-5727-2427](https://orcid.org/0000-0001-5727-2427)
 - **Registry** of those identifiers + their connections to affiliations and research activities
 - **APIs** for creating/retrieving metadata about connections between people, affiliations and research activities
 
+**Why?**
+
+- Help people find information (like all of a researcher's publications)
+- Simplify reporting and analysis (by providing a central source for info about researcher's affilations and activiteis)
+- Reduce time spent filling out forms (by providing a source for autopopulating form fields)
 
 
 ORCID doesn't do this on its own - integrations with other systems (like manuscript submission/production, funding application, repository, research information, and directory systems) are essential.

@@ -152,6 +152,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../access/" title="2. Accessing ORCID APIs" class="md-nav__link">
+      2. Accessing ORCID APIs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../sandbox/" title="2. Set up the Sandbox" class="md-nav__link">
       2. Set up the Sandbox
     </a>
@@ -211,15 +223,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-api-credentials" title="Get API credentials" class="md-nav__link">
-    Get API credentials
+  <a href="#about-authenticated-ids" title="About authenticated iDs" class="md-nav__link">
+    About authenticated iDs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-an-authenticated-orcid-id" title="Get an authenticated ORCID iD" class="md-nav__link">
-    Get an authenticated ORCID iD
+  <a href="#get-an-authenticated-id" title="Get an authenticated iD" class="md-nav__link">
+    Get an authenticated iD
   </a>
   
 </li>
@@ -288,15 +300,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-api-credentials" title="Get API credentials" class="md-nav__link">
-    Get API credentials
+  <a href="#about-authenticated-ids" title="About authenticated iDs" class="md-nav__link">
+    About authenticated iDs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-an-authenticated-orcid-id" title="Get an authenticated ORCID iD" class="md-nav__link">
-    Get an authenticated ORCID iD
+  <a href="#get-an-authenticated-id" title="Get an authenticated iD" class="md-nav__link">
+    Get an authenticated iD
   </a>
   
 </li>
@@ -321,29 +333,12 @@
                 <p>In our first few API requests, we already knew which ORCID iD to use (our own!) and we read/searched public information, which didn't require any permission from the user. </p>
 <p>In practice, you'll need to gather up iDs for researchers whose ORCID records your interested in. The best way to do this is to get authenticated iDs from those researchers.</p>
 <p>In this section, we'll use the Sandbox Member API to get an authenticated ORCID iD. This process can also be completed using the Public API.</p>
-<p><strong>Authenticated iDs</strong></p>
+<h3 id="about-authenticated-ids">About authenticated iDs</h3>
 <p>ORCID is about disambiguation,it's important that you get the correct iD for each researcher. The best way to do this is to collect <strong>Authenticated ORCID iDs</strong>, which means that each researcher signs into their ORCID account and authorizes your system to obtain their iD. <a href="https://orcid.org/blog/2017/02/20/whats-so-special-about-signing">Learn more about Authenticated iDs</a></p>
-<p><strong>OAuth 2.0</strong> </p>
-<p>Getting an Authenticated iD from a user involves following <a href="https://oauth.net/2/">OAuth 2.0</a>, an industry-standard protocol for authorization. OAuth allows a user to give a website or application access to account information stored on another site, without giving that site their password. </p>
-<p>If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used OAuth!</p>
-<p><strong>The OAuth process includes 3 steps:</strong></p>
-<ol>
-<li>Create an authorization URL</li>
-<li>Get an authorization code</li>
-<li>Exchange the authorization code for an access token</li>
-</ol>
-<h3 id="get-api-credentials">Get API credentials</h3>
-<p>API credentials consisting of a <strong>client ID</strong> and a <strong>client secret</strong> are needed in order to get Authenticated iDs and/or user permissions.</p>
-<p>To get Authenticated iDs, you can use Public or Member API credentials. To get permission to read non-public information or add/update researchers' ORCID records, you'll need Member API credentials. To request API credentials, see <a href="https://orcid.org/content/register-client-application">Request API credentials</a></p>
-<p>For this workshop, we'll use a set of demo credentials:</p>
-<pre><code>client_id: APP-XA6KUTFCVQL0622C
-client_secret: 7c8d6b1b-401b-4f5d-9b8b-b8108c6e197c
-</code></pre>
-
-<p>(Demo client secret created for this workshop - do not share API client secrets!)</p>
-<h3 id="get-an-authenticated-orcid-id">Get an authenticated ORCID iD</h3>
-<p>For this tutorial, we'll use Postman to simulate the steps of an OAuth 2.0 interaction that, in the real world, would be completed by your own custom web application or a vendor system.</p>
-<p>For more details on what's happening behind the scenes, see our <a href="https://members.orcid.org/api/tutorial/get-orcid-id">Basic tutorial: Get an authenticated ORCID iD </a></p>
+<h3 id="get-an-authenticated-id">Get an authenticated iD</h3>
+<p>Getting an Authenticated iD from a user requires generating an <a href="https://oauth.net/2/">OAuth 2.0</a> access token using an <strong>Authorization Code</strong> grant type. </p>
+<p>This grant type allows a user to give a website or application access to account information stored on another site, without giving that site their password. </p>
+<p>If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used the same process!</p>
 <ol>
 <li>In the Postman Builder tab, click the <strong>+</strong> sign at the top of the screen to create a new request.</li>
 <li>Click <strong>Authorization</strong>, then set the <strong>Type</strong> dropdown to <strong>OAuth 2.0</strong><br>

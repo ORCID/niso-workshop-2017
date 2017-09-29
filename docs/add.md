@@ -11,8 +11,8 @@ Before we can add data to an ORCID record, we first need to get permission from 
 ***Why do we need permission?** Control over access to data in your ORCID record is one of [ORCID's core princples](https://orcid.org/about/what-is-orcid/principles). While you can read public data without the record owner's involvement, reading non-public data or making changes to data always requires the record owner's permission.* 
 
 1. In the same Postman request tab that you used in the last section, click **Get New Access Token**
-2. Change **Token Name** to **Update record** and **Scope** to ```/activites/update```. Leave all other fields as they were in the [Get an authenticated ORCID iD section](/authenticate/#get-an-authenticated-orcid-id)<br>
-*```/activites/update``` scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.*<br> 
+2. Change **Token Name** to **Update record** and **Scope** to ```/activities/update```. Leave all other fields as they were in the [Get an authenticated ORCID iD section](/authenticate/#get-an-authenticated-orcid-id)<br>
+*```/activities/update``` scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.*<br> 
 <img src="../images/06-1_token-config.png" width="400" alt="Postman config for exchanging authorization code for access token" />
 3. Leave **Request access token locally** unchecked and click **Request Token**
 2. An ORCID sign-in screen will appear; sign into the Sandbox ORCID account you created earlier. ***Note:** If you're already signed into ORCID in the same browser, this step will be skipped.*<br>
@@ -52,7 +52,7 @@ Next, we'll use the access token generated in the previous section to add an edu
 ***Got an error?** Check the [ORCID API error code reference](http://members.orcid.org/api/resources/error-codes) for help*
 13. Visit the public view of your Sandbox record at ```http://sandbox.orcid.org/[ORCID ID]``` to see your new education affiliation.<br>
 <img src="../images/06-1_new-affiliation.png" width="600" alt="ORCID record with new education affiliation item added" /><br>
-*Notice that **Source** shows the name of the API client that added the affiliation - this is a key element that helps other systems consuming ORCID data determine whether this piece of information is authoritative.**
+*Notice that **Source** shows the name of the API client that added the affiliation - this is a key element that helps other systems consuming ORCID data determine whether this piece of information is authoritative.*
 
 ##Education affiliation XML
 
