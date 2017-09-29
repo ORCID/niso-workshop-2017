@@ -152,6 +152,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../access/" title="2. Accessing ORCID APIs" class="md-nav__link">
+      2. Accessing ORCID APIs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../sandbox/" title="2. Set up the Sandbox" class="md-nav__link">
       2. Set up the Sandbox
     </a>
@@ -197,6 +209,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-access-token" title="Get an access token" class="md-nav__link">
+    Get an access token
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#search-for-records-with-an-institutional-affiliation" title="Search for records with an institutional affiliation" class="md-nav__link">
@@ -288,6 +307,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#get-an-access-token" title="Get an access token" class="md-nav__link">
+    Get an access token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#search-for-records-with-an-institutional-affiliation" title="Search for records with an institutional affiliation" class="md-nav__link">
     Search for records with an institutional affiliation
   </a>
@@ -320,6 +346,9 @@
                 
                 <p>In addition to reading information on a specific ORCID record, you can use the API to search for ORCID records that contain specific information.</p>
 <p>In this section, we'll try searches using just a few of the available fields. For a full list of fields that you can search, see our <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">Basic tutorial: Searching Data using the ORCID API</a></p>
+<h2 id="get-an-access-token">Get an access token</h2>
+<p>If you already have a token valid for the scope <code>/read-public</code> from the previous section, you can use that token.</p>
+<p>If not, go back and follow the steps in <a href="../read/#get-an-access-token">READ public info: Get an access token</a></p>
 <h2 id="search-for-records-with-an-institutional-affiliation">Search for records with an institutional affiliation</h2>
 <ol>
 <li>Open Postman and click the <strong>Builder</strong> tab at the top of the screen</li>
@@ -327,6 +356,9 @@
 <li>In the <strong>Enter request URL</strong> field enter:<br>
 <code>https://pub.sandbox.orcid.org/v2.0/search/?q=affiliation-org-name:%22Boston%20University%22</code><br>
 <img src="../images/03-1_request-search.png" width="600" alt="Postman request for ORCID record search" /></li>
+<li>Click the <strong>Authorization</strong> tab and set the Type dropdown to <strong>OAuth 2.0</strong></li>
+<li>Under <strong>Existing Tokens</strong>, select the <strong>Read public</strong> token, and set the <strong>Add token to</strong> dropdown to <strong>Header</strong> at right<br>
+<img src="../images/read-public-token-response.png" width="600" alt="Postman response for an access token request" /><br></li>
 <li>Click <strong>Send the request</strong></li>
 <li>The total number of matching ORCID iDs and a list of those iDs will appear <strong>Request/Response</strong> section<br>
 <img src="../images/03-1_response-search.png" width="600" alt="Postman response for ORCID record search" /></li>
