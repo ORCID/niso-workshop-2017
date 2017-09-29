@@ -8,6 +8,11 @@ In this section, we'll use the Sandbox Member API to get an authenticated ORCID 
 
 ORCID is about disambiguation,it's important that you get the correct iD for each researcher. The best way to do this is to collect **Authenticated ORCID iDs**, which means that each researcher signs into their ORCID account and authorizes your system to obtain their iD. [Learn more about Authenticated iDs](https://orcid.org/blog/2017/02/20/whats-so-special-about-signing)
 
+###Demo
+
+See how getting an authenticated iD worksn in our Sandbox demo app:<br> 
+[https://orcid-createondemand.herokuapp.com/](https://orcid-createondemand.herokuapp.com/)
+
 ###Get an authenticated iD 
 
 Getting an Authenticated iD from a user requires generating an [OAuth 2.0](https://oauth.net/2/) access token using an **Authorization Code** grant type. 
@@ -15,6 +20,8 @@ Getting an Authenticated iD from a user requires generating an [OAuth 2.0](https
 This grant type allows a user to give a website or application access to account information stored on another site, without giving that site their password. 
 
 If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used the same process!
+
+See a demo at: 
 
 1. In the Postman Builder tab, click the **+** sign at the top of the screen to create a new request.
 2. Click **Authorization**, then set the **Type** dropdown to **OAuth 2.0**<br>

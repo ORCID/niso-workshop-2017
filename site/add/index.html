@@ -15,7 +15,7 @@
     
     
       
-        <title>6. ADD information - Hands-on with the ORCID API</title>
+        <title>7. ADD information - Hands-on with the ORCID API</title>
       
     
     
@@ -77,7 +77,7 @@
             
               
             
-            6. ADD information
+            7. ADD information
           
         </span>
       </div>
@@ -164,8 +164,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../sandbox/" title="2. Set up the Sandbox" class="md-nav__link">
-      2. Set up the Sandbox
+    <a href="../sandbox/" title="3. Set up the Sandbox" class="md-nav__link">
+      3. Set up the Sandbox
     </a>
   </li>
 
@@ -176,8 +176,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../read/" title="3. READ public info" class="md-nav__link">
-      3. READ public info
+    <a href="../read/" title="4. READ public info" class="md-nav__link">
+      4. READ public info
     </a>
   </li>
 
@@ -188,8 +188,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../search/" title="4. SEARCH public info" class="md-nav__link">
-      4. SEARCH public info
+    <a href="../search/" title="5. SEARCH public info" class="md-nav__link">
+      5. SEARCH public info
     </a>
   </li>
 
@@ -200,8 +200,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../authenticate/" title="5. AUTHENTICATE iDs" class="md-nav__link">
-      5. AUTHENTICATE iDs
+    <a href="../authenticate/" title="6. AUTHENTICATE iDs" class="md-nav__link">
+      6. AUTHENTICATE iDs
     </a>
   </li>
 
@@ -219,11 +219,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        6. ADD information
+        7. ADD information
       </label>
     
-    <a href="./" title="6. ADD information" class="md-nav__link md-nav__link--active">
-      6. ADD information
+    <a href="./" title="7. ADD information" class="md-nav__link md-nav__link--active">
+      7. ADD information
     </a>
     
       
@@ -270,8 +270,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../update/" title="7. UPDATE information" class="md-nav__link">
-      7. UPDATE information
+    <a href="../update/" title="8. UPDATE information" class="md-nav__link">
+      8. UPDATE information
     </a>
   </li>
 
@@ -282,8 +282,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../resources/" title="8. Resources" class="md-nav__link">
-      8. Resources
+    <a href="../resources/" title="9. Resources" class="md-nav__link">
+      9. Resources
     </a>
   </li>
 
@@ -342,7 +342,7 @@
               
                 
                 
-                  <h1>6. ADD information</h1>
+                  <h1>7. ADD information</h1>
                 
                 <p>ORCID member organizations can use the API to add information from their systems, like affiliations, grants and publications, to user's records, making that information visible both to the user and to other systems that rely on ORCID data.</p>
 <p>In this section, we'll use the Member API to add an education affiliation item to our Sandbox record. </p>
@@ -351,8 +351,8 @@
 <p><em><strong>Why do we need permission?</strong> Control over access to data in your ORCID record is one of <a href="https://orcid.org/about/what-is-orcid/principles">ORCID's core princples</a>. While you can read public data without the record owner's involvement, reading non-public data or making changes to data always requires the record owner's permission.</em> </p>
 <ol>
 <li>In the same Postman request tab that you used in the last section, click <strong>Get New Access Token</strong></li>
-<li>Change <strong>Token Name</strong> to <strong>Update record</strong> and <strong>Scope</strong> to <code>/activites/update</code>. Leave all other fields as they were in the <a href="../authenticate/#get-an-authenticated-orcid-id">Get an authenticated ORCID iD section</a><br>
-<em><code>/activites/update</code> scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.</em><br> 
+<li>Change <strong>Token Name</strong> to <strong>Update record</strong> and <strong>Scope</strong> to <code>/activities/update</code>. Leave all other fields as they were in the <a href="../authenticate/#get-an-authenticated-orcid-id">Get an authenticated ORCID iD section</a><br>
+<em><code>/activities/update</code> scope generates a token that can be used to add/update items in the education, employment, funding and works sections of an ORCID record.</em><br> 
 <img src="../images/06-1_token-config.png" width="400" alt="Postman config for exchanging authorization code for access token" /></li>
 <li>Leave <strong>Request access token locally</strong> unchecked and click <strong>Request Token</strong></li>
 <li>An ORCID sign-in screen will appear; sign into the Sandbox ORCID account you created earlier. <em><strong>Note:</strong> If you're already signed into ORCID in the same browser, this step will be skipped.</em><br>
@@ -405,7 +405,7 @@
 <em><strong>Got an error?</strong> Check the <a href="http://members.orcid.org/api/resources/error-codes">ORCID API error code reference</a> for help</em></li>
 <li>Visit the public view of your Sandbox record at <code>http://sandbox.orcid.org/[ORCID ID]</code> to see your new education affiliation.<br>
 <img src="../images/06-1_new-affiliation.png" width="600" alt="ORCID record with new education affiliation item added" /><br>
-<em>Notice that <strong>Source</strong> shows the name of the API client that added the affiliation - this is a key element that helps other systems consuming ORCID data determine whether this piece of information is authoritative.</em>*</li>
+<em>Notice that <strong>Source</strong> shows the name of the API client that added the affiliation - this is a key element that helps other systems consuming ORCID data determine whether this piece of information is authoritative.</em></li>
 </ol>
 <h2 id="education-affiliation-xml">Education affiliation XML</h2>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -452,7 +452,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../authenticate/" title="5. AUTHENTICATE iDs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../authenticate/" title="6. AUTHENTICATE iDs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -461,19 +461,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                5. AUTHENTICATE iDs
+                6. AUTHENTICATE iDs
               </span>
             </div>
           </a>
         
         
-          <a href="../update/" title="7. UPDATE information" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../update/" title="8. UPDATE information" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                7. UPDATE information
+                8. UPDATE information
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
