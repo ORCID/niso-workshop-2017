@@ -12,7 +12,7 @@ All who participate in research, scholarship, and innovation are **uniquely iden
 
 **What we provide:**
 
-- **Persistent digital identifier** for researchers (ORCID iD), ex: [https://orcid.org/0000-0001-5727-2427](https://orcid.org/0000-0001-5727-2427)
+- **Persistent digital identifier** for researchers (ORCID iD):<br>[https://orcid.org/0000-0001-5727-2427](https://orcid.org/0000-0001-5727-2427)
 - **Registry** of those identifiers + their connections to affiliations and research activities
 - **APIs** for creating/retrieving metadata about connections between people, affiliations and research activities
 
