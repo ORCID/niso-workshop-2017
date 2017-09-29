@@ -10,7 +10,7 @@ ORCID is about disambiguation,it's important that you get the correct iD for eac
 
 ###Demo
 
-See how getting an authenticated iD worksn in our Sandbox demo app:<br> 
+See how getting an authenticated iD works in our Sandbox demo app:<br> 
 [https://orcid-createondemand.herokuapp.com/](https://orcid-createondemand.herokuapp.com/)
 
 ###Get an authenticated iD 

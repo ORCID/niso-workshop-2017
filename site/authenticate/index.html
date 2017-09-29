@@ -230,6 +230,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#demo" title="Demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-an-authenticated-id" title="Get an authenticated iD" class="md-nav__link">
     Get an authenticated iD
   </a>
@@ -307,6 +314,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#demo" title="Demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-an-authenticated-id" title="Get an authenticated iD" class="md-nav__link">
     Get an authenticated iD
   </a>
@@ -335,10 +349,14 @@
 <p>In this section, we'll use the Sandbox Member API to get an authenticated ORCID iD. This process can also be completed using the Public API.</p>
 <h3 id="about-authenticated-ids">About authenticated iDs</h3>
 <p>ORCID is about disambiguation,it's important that you get the correct iD for each researcher. The best way to do this is to collect <strong>Authenticated ORCID iDs</strong>, which means that each researcher signs into their ORCID account and authorizes your system to obtain their iD. <a href="https://orcid.org/blog/2017/02/20/whats-so-special-about-signing">Learn more about Authenticated iDs</a></p>
+<h3 id="demo">Demo</h3>
+<p>See how getting an authenticated iD worksn in our Sandbox demo app:<br> 
+<a href="https://orcid-createondemand.herokuapp.com/">https://orcid-createondemand.herokuapp.com/</a></p>
 <h3 id="get-an-authenticated-id">Get an authenticated iD</h3>
 <p>Getting an Authenticated iD from a user requires generating an <a href="https://oauth.net/2/">OAuth 2.0</a> access token using an <strong>Authorization Code</strong> grant type. </p>
 <p>This grant type allows a user to give a website or application access to account information stored on another site, without giving that site their password. </p>
 <p>If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used the same process!</p>
+<p>See a demo at: </p>
 <ol>
 <li>In the Postman Builder tab, click the <strong>+</strong> sign at the top of the screen to create a new request.</li>
 <li>Click <strong>Authorization</strong>, then set the <strong>Type</strong> dropdown to <strong>OAuth 2.0</strong><br>
