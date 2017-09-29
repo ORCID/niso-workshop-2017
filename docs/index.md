@@ -3,7 +3,7 @@
 **Who we are:**
 
 - Non-profit 
-- Open source project
+- Open source project ([ORCID Github repository](https://github.com/ORCID/ORCID-Source))
 - Committed international community
 
 **Our goal:**
