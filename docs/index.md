@@ -38,7 +38,7 @@ ORCID's web interface gives researchers a way to interact with their record, but
 | Features       | Public | Basic Member | Premium Member |
 | -------------- | ---------- | ---------------- | ------------------ |
 |**READ**<br>Read data ORCID records| **X**<br>*Public data*  | **X**<br>*Public + limited-access data (with user permission)* | **X**<br>*Public + limited-access data (with user permission)* |
-|**SEARCH**<br>Search data on ORCID records| **X**<br>*Public data* | **X**<br>*Public + limited-access data (with user permission)*  | **X**<br>*Public + limited-access data (with user permission)* |
+|**SEARCH**<br>Search data on ORCID records| **X**<br>*Public data* | **X**<br>*Public data*  | **X**<br>*Public data* |
 |**AUTHENTICATE**<br>Get a user's authenticated ORCID iD| **X** | **X** | **X** |
 |**UPDATE**<br>Add items to a record or update items you added previously|  | **X** | **X** |
 |**WEBHOOKS**<br>Get notifications when ORCID records you're monitoring are updated|  |  | **X** |
