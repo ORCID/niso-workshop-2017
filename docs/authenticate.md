@@ -4,40 +4,17 @@ In practice, you'll need to gather up iDs for researchers whose ORCID records yo
 
 In this section, we'll use the Sandbox Member API to get an authenticated ORCID iD. This process can also be completed using the Public API.
 
-**Authenticated iDs**
+###About authenticated iDs
 
 ORCID is about disambiguation,it's important that you get the correct iD for each researcher. The best way to do this is to collect **Authenticated ORCID iDs**, which means that each researcher signs into their ORCID account and authorizes your system to obtain their iD. [Learn more about Authenticated iDs](https://orcid.org/blog/2017/02/20/whats-so-special-about-signing)
 
-**OAuth 2.0** 
+###Get an authenticated iD 
 
-Getting an Authenticated iD from a user involves following [OAuth 2.0](https://oauth.net/2/), an industry-standard protocol for authorization. OAuth allows a user to give a website or application access to account information stored on another site, without giving that site their password. 
+Getting an Authenticated iD from a user requires generating an [OAuth 2.0](https://oauth.net/2/) access token using an **Authorization Code** grant type. 
 
-If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used OAuth!
+This grant type allows a user to give a website or application access to account information stored on another site, without giving that site their password. 
 
-**The OAuth process includes 3 steps:**
-
-1. Create an authorization URL
-1. Get an authorization code
-2. Exchange the authorization code for an access token
-
-###Get API credentials
-API credentials consisting of a **client ID** and a **client secret** are needed in order to get Authenticated iDs and/or user permissions.
-
-To get Authenticated iDs, you can use Public or Member API credentials. To get permission to read non-public information or add/update researchers' ORCID records, you'll need Member API credentials. To request API credentials, see [Request API credentials](https://orcid.org/content/register-client-application)
-
-For this workshop, we'll use a set of demo credentials:
-
-```
-client_id: APP-XA6KUTFCVQL0622C
-client_secret: 7c8d6b1b-401b-4f5d-9b8b-b8108c6e197c
-```
-(Demo client secret created for this workshop - do not share API client secrets!)
-
-###Get an authenticated ORCID iD
-
-For this tutorial, we'll use Postman to simulate the steps of an OAuth 2.0 interaction that, in the real world, would be completed by your own custom web application or a vendor system.
-
-For more details on what's happening behind the scenes, see our [Basic tutorial: Get an authenticated ORCID iD ](https://members.orcid.org/api/tutorial/get-orcid-id)
+If you've ever signed into a site using Google or Facebook instead of your credentials for that particular site, you've already used the same process!
 
 1. In the Postman Builder tab, click the **+** sign at the top of the screen to create a new request.
 2. Click **Authorization**, then set the **Type** dropdown to **OAuth 2.0**<br>

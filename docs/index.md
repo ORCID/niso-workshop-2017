@@ -1,3 +1,31 @@
+##About ORCID
+
+**Who we are:**
+
+- Non-profit 
+- Open source project
+- Committed international community
+
+**Our goal:**
+
+All who participate in research, scholarship, and innovation are **uniquely identified** and **connected to their contributions** across disciplines, borders, and time.
+
+**Why?**
+
+- Help people find information (like all of a researcher's publications)
+- Simplify reporting and analysis (by providing a central source for info about researcher's affilations and activites)
+- Reduce time spent filling out forms (by providing a source for autopopulating form fields)
+
+**What we provide:**
+
+- **Persistent digital identifier** for researchers (ORCID iD)
+- **Registry** of those identifiers + their connections to affiliations and research activities
+- **APIs** for creating/retrieving metadata about connections between people, affiliations and research activities
+
+
+
+ORCID doesn't do this on its own - integrations with other systems (like manuscript submission/production, funding application, repository, research information, and directory systems) are essential.
+
 ##About the ORCID APIs
 ORCID's web interface gives researchers a way to interact with their record, but the real power of ORCID lies in the underlying data, which can be accessed by people and systems via Application Programming Interfaces (APIs).
 
@@ -10,11 +38,11 @@ ORCID's web interface gives researchers a way to interact with their record, but
 
 | Features       | Public | Basic Member | Premium Member |
 | -------------- | ---------- | ---------------- | ------------------ |
-|**AUTHENTICATE**<br>Get a user's authenticated ORCID iDs| X | X | X |
-|**READ(PUBLIC)**<br>Read/search public data on ORCID records| X | X | X |
-|**READ (LIMITED)**<br>Read/search limited-access data on ORCID records|  | X | X |
-|**UPDATE**<br>Add items to a record or update items you added previously|  | X | X |
-|**WEBHOOKS**<br>Get notifications when ORCID records you're monitoring are updated|  |  | X |
+|**READ**<br>Read data ORCID records| **X**<br>*Public data*  | **X**<br>*Public + limited-access data (with user permission)* | **X**<br>*Public + limited-access data (with user permission)* |
+|**SEARCH**<br>Search data on ORCID records| **X**<br>*Public data* | **X**<br>*Public + limited-access data (with user permission)*  | **X**<br>*Public + limited-access data (with user permission)* |
+|**AUTHENTICATE**<br>Get a user's authenticated ORCID iD| **X** | **X** | **X** |
+|**UPDATE**<br>Add items to a record or update items you added previously|  | **X** | **X** |
+|**WEBHOOKS**<br>Get notifications when ORCID records you're monitoring are updated|  |  | **X** |
 
 All of the ORCID APIs are  based on the same set of technologies:
 

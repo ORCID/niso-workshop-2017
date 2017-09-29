@@ -2,12 +2,20 @@ In addition to reading information on a specific ORCID record, you can use the A
 
 In this section, we'll try searches using just a few of the available fields. For a full list of fields that you can search, see our [Basic tutorial: Searching Data using the ORCID API](https://members.orcid.org/api/tutorial/search-orcid-registry)
 
+##Get an access token
+If you already have a token valid for the scope ```/read-public``` from the previous section, you can use that token.
+
+If not, go back and follow the steps in [READ public info: Get an access token](read/#get-an-access-token)
+
 ##Search for records with an institutional affiliation
 1. Open Postman and click the **Builder** tab at the top of the screen
 2. Set the request type to **GET**
 3. In the **Enter request URL** field enter:<br>
 ```https://pub.sandbox.orcid.org/v2.0/search/?q=affiliation-org-name:%22Boston%20University%22```<br>
 <img src="../images/03-1_request-search.png" width="600" alt="Postman request for ORCID record search" />
+4. Click the **Authorization** tab and set the Type dropdown to **OAuth 2.0**
+5. Under **Existing Tokens**, select the **Read public** token, and set the **Add token to** dropdown to **Header** at right<br>
+<img src="../images/read-public-token-response.png" width="600" alt="Postman response for an access token request" /><br>
 4. Click **Send the request**
 5. The total number of matching ORCID iDs and a list of those iDs will appear **Request/Response** section<br>
 <img src="../images/03-1_response-search.png" width="600" alt="Postman response for ORCID record search" />

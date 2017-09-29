@@ -10,6 +10,7 @@ extra:
   logo: 'images/id-icon.svg' 
 pages:
     - 1. Introduction: index.md
+    - 2. Accessing ORCID APIs: access.md
     - 2. Set up the Sandbox: sandbox.md
     - 3. READ public info: read.md
     - 4. SEARCH public info: search.md
