@@ -1,4 +1,10 @@
-##About ORCID
+## About ORCID
+
+**Old Document!**
+
+*************
+Information in this document may be out of date. Please refer to the new tutorial at https://orcid.github.io/orcid-api-tutorial/ 
+*************
 
 **Who we are:**
 
